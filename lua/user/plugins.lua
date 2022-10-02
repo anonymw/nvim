@@ -44,14 +44,16 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "kyazdani42/nvim-web-devicons"
+
   -- telescope
   use 'nvim-telescope/telescope.nvim'
 
   -- Colorschemes
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim' -- lualine
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
+  use 'nvim-lualine/lualine.nvim'
+  use 'akinsho/bufferline.nvim'
   use "ryanoasis/vim-devicons"
 
   -- treesitter
@@ -83,6 +85,7 @@ return packer.startup(function(use)
   -- gitsigns
   use 'lewis6991/gitsigns.nvim'
 
+  use 'kyazdani42/nvim-tree.lua'
   -- Lua
   -- use "folke/which-key.nvim"
 
