@@ -17,3 +17,21 @@ require "user.toggleterm"
 require "user.impatient"
 require "user.indentline"
 require "user.project"
+
+local lang_maps = {
+	cpp = { build = "g++ % -o %:r", exec = "./%:r" },
+	python = { exec = "python %" },
+	sh = { exec = "./%" },
+}
+for lang, data in pairs(lang_maps) do
+	if data.build ~= nil then
+		vim.api.nvim_create_autocmd(
+			"FileType",
+			{ command = "nnoremap <Leader>b :!" .. data.build .. "<CR>", pattern = lang }
+		)
+	end
+	vim.api.nvim_create_autocmd(
+		"FileType",
+		{ command = "nnoremap <Leader>e :split<CR>:terminal " .. data.exec .. "<CR>", pattern = lang }
+	)
+end
