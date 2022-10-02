@@ -15,6 +15,7 @@ local options = {
 	smartcase = true, -- smart case
 	smartindent = true, -- make indenting smarter again
 	termguicolors = true,                    -- set term gui colors (most terminals support this)
+  showmode = false,
 	updatetime = 100, -- faster completion (4000ms default)
 	cursorline = true, -- highlight the current line
 	-- undofile = true, -- enable persistent undo
